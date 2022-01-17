@@ -8,7 +8,7 @@ import java.util.Set;
 public class Author {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long Id;
+    Long id;
     String first;
     String last;
 
@@ -21,11 +21,11 @@ public class Author {
     private Set<Book> books  = new HashSet<>();
 
     public Long getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Long id) {
-        Id = id;
+        this.id = id;
     }
 
     public String getFirst() {
@@ -52,6 +52,9 @@ public class Author {
         this.books = books;
     }
 
+    public Author() {
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -59,11 +62,11 @@ public class Author {
 
         Author author = (Author) o;
 
-        return Id != null ? Id.equals(author.Id) : author.Id == null;
+        return id != null ? id.equals(author.id) : author.id == null;
     }
 
     @Override
     public int hashCode() {
-        return Id != null ? Id.hashCode() : 0;
+        return id != null ? id.hashCode() : 0;
     }
 }
